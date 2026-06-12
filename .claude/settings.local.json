@@ -9,7 +9,11 @@
       "Read(//c/Program Files/GitHub CLI//**)",
       "Read(//c/Users/97250/AppData/Local/Programs/**)",
       "Bash(/c/Users/97250/AppData/Local/Programs/GitHub CLI/gh.exe repo:*)",
-      "Bash(/c/Program Files/GitHub CLI/gh.exe repo:*)"
+      "Bash(/c/Program Files/GitHub CLI/gh.exe repo:*)",
+      "Bash(npm install:*)",
+      "Bash(rm:*)",
+      "Bash(timeout 5 node server/app.js)",
+      "Bash(git:*)"
     ]
   }
 }
