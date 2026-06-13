@@ -5,6 +5,7 @@ const path = require('path');
 const { initDatabase } = require('./db/database');
 const authRoutes = require('./routes/auth');
 const dashboardRoutes = require('./routes/dashboard');
+const paymentRoutes = require('./routes/payment');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -12,8 +13,9 @@ const PORT = process.env.PORT || 3000;
 // Initialize the database on startup
 initDatabase();
 
-// Parse JSON request bodies
+// Parse JSON and form-encoded request bodies
 app.use(express.json());
+app.use(express.urlencoded({ extended: false })); // needed for Meshulam webhook
 
 // Session middleware
 app.use(session({
@@ -25,6 +27,7 @@ app.use(session({
 
 // API routes
 app.use('/api', authRoutes);
+app.use('/api/payment', paymentRoutes);
 
 // Protected page routes (must be before static middleware)
 app.use('/', dashboardRoutes);
