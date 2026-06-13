@@ -4,6 +4,7 @@ const session = require('express-session');
 const path = require('path');
 const { initDatabase } = require('./db/database');
 const authRoutes = require('./routes/auth');
+const dashboardRoutes = require('./routes/dashboard');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -24,6 +25,9 @@ app.use(session({
 
 // API routes
 app.use('/api', authRoutes);
+
+// Protected page routes (must be before static middleware)
+app.use('/', dashboardRoutes);
 
 // Serve static files from the public folder
 app.use(express.static(path.join(__dirname, '../public')));

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Black Hat — השיעורים שלי</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <a href="/dashboard" class="nav-logo">BLACK HAT</a>
+    <div class="nav-links">
+      <span class="nav-user" id="nav-email"></span>
+      <button class="btn-logout" id="logout-btn">התנתק</button>
+    </div>
+  </nav>
+
+  <!-- ===== DASHBOARD ===== -->
+  <div class="section">
+
+    <div class="dashboard-header">
+      <div class="hero-tag">// MEMBER ACCESS</div>
+      <h1 class="dashboard-title">השיעורים שלך</h1>
+    </div>
+
+    <div class="lessons-grid">
+
+      <div class="lesson-card">
+        <div class="lesson-number">[ 01 ]</div>
+        <h3 class="lesson-title">מבוא לסייבר</h3>
+        <p class="lesson-desc">עקרונות יסוד של אבטחת מידע, מושגים בסיסיים וחשיבה התקפית</p>
+        <a href="/lesson/01" class="btn-primary">פתח שיעור ←</a>
+      </div>
+
+      <div class="lesson-card lesson-locked">
+        <div class="lesson-number">[ 02 ]</div>
+        <h3 class="lesson-title">סריקת רשתות</h3>
+        <p class="lesson-desc">שימוש ב־Nmap וכלים נוספים לזיהוי מטרות ברשת</p>
+        <span class="badge-soon">בקרוב</span>
+      </div>
+
+      <div class="lesson-card lesson-locked">
+        <div class="lesson-number">[ 03 ]</div>
+        <h3 class="lesson-title">פריצה לאתרים</h3>
+        <p class="lesson-desc">SQL Injection, XSS, CSRF — גילוי וניצול חולשות נפוצות</p>
+        <span class="badge-soon">בקרוב</span>
+      </div>
+
+      <div class="lesson-card lesson-locked">
+        <div class="lesson-number">[ 04 ]</div>
+        <h3 class="lesson-title">OSINT</h3>
+        <p class="lesson-desc">איסוף מידע מהאינטרנט — טכניקות ריגול דיגיטלי חוקיות</p>
+        <span class="badge-soon">בקרוב</span>
+      </div>
+
+      <div class="lesson-card lesson-locked">
+        <div class="lesson-number">[ 05 ]</div>
+        <h3 class="lesson-title">הנדסה חברתית</h3>
+        <p class="lesson-desc">פישינג, vishing, pretexting — כיצד האקרים מניפולים אנשים</p>
+        <span class="badge-soon">בקרוב</span>
+      </div>
+
+      <div class="lesson-card lesson-locked">
+        <div class="lesson-number">[ 06 ]</div>
+        <h3 class="lesson-title">ניתוח מלוור</h3>
+        <p class="lesson-desc">פירוק וניתוח קבצים חשודים בסביבה בטוחה</p>
+        <span class="badge-soon">בקרוב</span>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // On page load — fetch current user info
+    fetch('/api/me')
+      .then(function(res) {
+        if (res.status === 401) {
+          window.location.href = '/login.html';
+          return;
+        }
+        return res.json();
+      })
+      .then(function(data) {
+        if (data && data.email) {
+          document.getElementById('nav-email').textContent = data.email;
+        }
+      });
+
+    // Logout button
+    document.getElementById('logout-btn').addEventListener('click', function() {
+      fetch('/api/logout', { method: 'POST' })
+        .then(function() {
+          window.location.href = '/login.html';
+        });
+    });
+  </script>
+
+</body>
+</html>

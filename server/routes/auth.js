@@ -40,4 +40,12 @@ router.post('/logout', (req, res) => {
   res.json({ success: true });
 });
 
+// GET /api/me — returns current logged-in user (used by dashboard)
+router.get('/me', (req, res) => {
+  if (!req.session.user) {
+    return res.status(401).json({ error: 'לא מחובר' });
+  }
+  res.json({ email: req.session.user.email, paid: req.session.user.paid });
+});
+
 module.exports = router;
