@@ -13,7 +13,10 @@
       "Bash(npm install:*)",
       "Bash(rm:*)",
       "Bash(timeout 5 node server/app.js)",
-      "Bash(git:*)"
+      "Bash(git:*)",
+      "Bash(timeout 4 node server/app.js)",
+      "Bash(node scripts/createTestUser.js)",
+      "Bash(npm audit:*)"
     ]
   }
 }

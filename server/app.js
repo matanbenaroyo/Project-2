@@ -6,6 +6,7 @@ const { initDatabase } = require('./db/database');
 const authRoutes = require('./routes/auth');
 const dashboardRoutes = require('./routes/dashboard');
 const paymentRoutes = require('./routes/payment');
+const lessonRoutes = require('./routes/lessons');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -31,6 +32,7 @@ app.use('/api/payment', paymentRoutes);
 
 // Protected page routes (must be before static middleware)
 app.use('/', dashboardRoutes);
+app.use('/', lessonRoutes);
 
 // Serve static files from the public folder
 app.use(express.static(path.join(__dirname, '../public')));

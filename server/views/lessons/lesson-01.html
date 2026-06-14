@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Black Hat — מבוא לסייבר</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="lesson-page">
+
+  <!-- ===== TOP BAR ===== -->
+  <nav class="lesson-topbar">
+    <a href="/dashboard" class="nav-logo">BLACK HAT</a>
+    <div class="nav-links">
+      <a href="/dashboard">← חזרה לקורסים</a>
+      <button class="btn-logout" id="logout-btn">התנתק</button>
+    </div>
+  </nav>
+
+  <div class="lesson-layout">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="lesson-sidebar">
+      <div class="sidebar-course-title">BLACK HAT FOUNDATIONS</div>
+
+      <div class="sidebar-section-label">מבוא</div>
+      <ul class="sidebar-list">
+        <li class="sidebar-item active">
+          <span class="sidebar-num">00</span>
+          <span class="sidebar-name">מבוא לסייבר</span>
+          <span class="sidebar-time">20m</span>
+        </li>
+      </ul>
+
+      <div class="sidebar-section-label">יסודות</div>
+      <ul class="sidebar-list">
+        <li class="sidebar-item locked">
+          <span class="sidebar-num">01</span>
+          <span class="sidebar-name">סריקת רשתות</span>
+          <span class="sidebar-time">30m</span>
+        </li>
+        <li class="sidebar-item locked">
+          <span class="sidebar-num">02</span>
+          <span class="sidebar-name">פריצה לאתרים</span>
+          <span class="sidebar-time">35m</span>
+        </li>
+        <li class="sidebar-item locked">
+          <span class="sidebar-num">03</span>
+          <span class="sidebar-name">OSINT</span>
+          <span class="sidebar-time">25m</span>
+        </li>
+      </ul>
+
+      <div class="sidebar-section-label">מתקדם</div>
+      <ul class="sidebar-list">
+        <li class="sidebar-item locked">
+          <span class="sidebar-num">04</span>
+          <span class="sidebar-name">הנדסה חברתית</span>
+          <span class="sidebar-time">30m</span>
+        </li>
+        <li class="sidebar-item locked">
+          <span class="sidebar-num">05</span>
+          <span class="sidebar-name">ניתוח מלוור</span>
+          <span class="sidebar-time">40m</span>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="lesson-main">
+
+      <!-- Breadcrumb -->
+      <div class="lesson-breadcrumb">black hat / יסודות / <span class="breadcrumb-current">מבוא לסייבר</span></div>
+
+      <!-- Header -->
+      <div class="lesson-header">
+        <div class="lesson-meta">
+          <span class="lesson-tag">שיעור 00</span>
+          <span class="lesson-duration">⏱ 20 דקות</span>
+        </div>
+        <h1 class="lesson-title">מבוא לסייבר</h1>
+        <p class="lesson-subtitle">לפני שרצים לכלים — צריך להבין את המשחק.</p>
+      </div>
+
+      <!-- What you'll learn -->
+      <div class="lesson-objectives">
+        <div class="objectives-title">// במהלך השיעור תלמד</div>
+        <ol class="objectives-list">
+          <li>מה זה סייבר ולמה זה שונה מ־IT רגיל</li>
+          <li>CIA Triad — שלושת עמודי התווך של אבטחת מידע</li>
+          <li>סוגי האקרים — White, Grey ו־Black Hat</li>
+          <li>חשיבה התקפית וחשיבה מגנה — ההבדל</li>
+          <li>איך ללמוד סייבר נכון ולא להיתקע</li>
+        </ol>
+      </div>
+
+      <!-- Key Concept -->
+      <div class="callout callout-key">
+        <div class="callout-label">// CONCEPT</div>
+        <p>סייבר הוא לא קסם. זה מיומנות. כל האקר שאתה מכיר למד את אותם דברים שאתה עומד ללמוד — הוא פשוט התחיל.</p>
+      </div>
+
+      <!-- ===== SECTION 1 ===== -->
+      <div class="lesson-section">
+        <div class="section-marker">◆</div>
+        <h2 class="section-title">מה זה סייבר בכלל?</h2>
+        <p>אנשים מבלבלים בין IT לסייבר. זה לא אותו דבר.</p>
+        <p><strong class="green">IT</strong> עוסק בלגרום לדברים לעבוד — שרתים, רשתות, מחשבים.</p>
+        <p><strong class="green">סייבר</strong> עוסק בשאלה: מה קורה כשמישהו מנסה לשבור את מה שבנית?</p>
+        <p>אבטחת מידע היא תחום שבו אתה תמיד מניח שיש תוקף. השאלה היא לא "האם ינסו לפרוץ?" אלא "מתי ומה יעשו?".</p>
+
+        <!-- Image placeholder -->
+        <div class="lesson-image-placeholder">
+          [ תמונה: שרת מחובר לרשת עם סמלי מתקפה ]
+        </div>
+      </div>
+
+      <!-- ===== SECTION 2 ===== -->
+      <div class="lesson-section">
+        <div class="section-marker">◆</div>
+        <h2 class="section-title">CIA Triad — שלושת עמודי התווך</h2>
+        <p>כל מה שעושים בסייבר מתחבר לשלושה עקרונות בסיסיים:</p>
+
+        <div class="triad-grid">
+          <div class="triad-card">
+            <div class="triad-letter">C</div>
+            <div class="triad-name">Confidentiality<br><span class="triad-heb">סודיות</span></div>
+            <p>מידע יגיע רק למי שמורשה לראות אותו. אם אתה שולח הודעה, רק הנמען הנכון יקרא אותה.</p>
+          </div>
+          <div class="triad-card">
+            <div class="triad-letter">I</div>
+            <div class="triad-name">Integrity<br><span class="triad-heb">שלמות</span></div>
+            <p>מידע לא ישתנה בלי רשות. אם שמרת קובץ, הוא יישאר כפי שהיה — אף אחד לא שינה אותו בדרך.</p>
+          </div>
+          <div class="triad-card">
+            <div class="triad-letter">A</div>
+            <div class="triad-name">Availability<br><span class="triad-heb">זמינות</span></div>
+            <p>המערכת תהיה זמינה כשצריך אותה. מתקפת DDoS, למשל, פוגעת בדיוק בעיקרון הזה.</p>
+          </div>
+        </div>
+
+        <div class="callout callout-tip">
+          <div class="callout-label">// TIP</div>
+          <p>כשאתה שומע על מתקפת סייבר בחדשות, שאל את עצמך: איזה עיקרון מה־CIA Triad הופר? זה יעזור לך להבין מה קרה.</p>
+        </div>
+      </div>
+
+      <!-- ===== SECTION 3 ===== -->
+      <div class="lesson-section">
+        <div class="section-marker">◆</div>
+        <h2 class="section-title">סוגי האקרים</h2>
+        <p>לא כל האקר הוא פושע. הצבע של הכובע מגדיר את הכוונה:</p>
+
+        <div class="hat-grid">
+          <div class="hat-card hat-white">
+            <div class="hat-title">White Hat</div>
+            <p>האקרים אתיים. עובדים עם רשות. מוצאים חולשות ומדווחים עליהן כדי לתקן אותן.</p>
+            <div class="hat-example">דוגמה: חוקרי אבטחה, penetration testers, Bug Bounty hunters</div>
+          </div>
+          <div class="hat-card hat-grey">
+            <div class="hat-title">Grey Hat</div>
+            <p>פועלים בין החוקי ללא־חוקי. לפעמים פורצים בלי רשות, אבל מדווחים ולא גורמים נזק.</p>
+            <div class="hat-example">דוגמה: מישהו שמצא חולשה באתר ומודיע לאתר עליה בלי לקבל אישור</div>
+          </div>
+          <div class="hat-card hat-black">
+            <div class="hat-title">Black Hat</div>
+            <p>פועלים מחוץ לחוק. מטרתם: רווח, נזק, ריגול או פשוט כאוס. הידע זהה — הכוונה שונה.</p>
+            <div class="hat-example">דוגמה: קבוצות כופרה, גנבי מידע, מתקפות ממומנות על ידי מדינות</div>
+          </div>
+        </div>
+
+        <div class="callout callout-warning">
+          <div class="callout-label">// WARNING</div>
+          <p>הקורס הזה מלמד את <strong>הידע</strong> של Black Hat מתוך כוונה לבנות יכולת הגנה ועשייה אתית. שימוש בידע הזה ללא רשות הוא עבירה פלילית.</p>
+        </div>
+      </div>
+
+      <!-- ===== SECTION 4 ===== -->
+      <div class="lesson-section">
+        <div class="section-marker">◆</div>
+        <h2 class="section-title">חשיבה התקפית</h2>
+        <p>המגנים הטובים ביותר בעולם חושבים כמו תוקפים.</p>
+        <p>אם אתה בונה מערכת ורק שואל "איך היא עובדת?" — אתה מנהל. אם אתה שואל "איך אני שובר אותה?" — אתה מתחיל לחשוב בסייבר.</p>
+        <p>זו הסיבה שהקורס הזה מתחיל מהצד ההתקפי. לא כי אנחנו רוצים לפרוץ — כי כדי להגן על משהו אתה חייב להבין איך תוקפים חושבים.</p>
+
+        <div class="lesson-image-placeholder">
+          [ תמונה: תרשים של חשיבה התקפית מול הגנתית ]
+        </div>
+      </div>
+
+      <!-- ===== SECTION 5 ===== -->
+      <div class="lesson-section">
+        <div class="section-marker">◆</div>
+        <h2 class="section-title">איך ללמוד סייבר נכון</h2>
+        <p>הבעיה הכי גדולה של מתחילים בסייבר: הם לומדים יותר מדי — ומתרגלים פחות מדי.</p>
+
+        <p>הגישה הנכונה:</p>
+        <ul class="lesson-list">
+          <li>לומדים מושג — מיד מנסים אותו בפועל</li>
+          <li>לא ממשיכים לפני שהבינו את הנוכחי</li>
+          <li>מתרגלים בסביבה מבוקרת (מכונות וירטואליות, לאבים)</li>
+          <li>לא מנסים "לגנוב" ידע מכל מקום — עוקבים אחרי נתיב ברור</li>
+        </ul>
+
+        <div class="callout callout-key">
+          <div class="callout-label">// RULE</div>
+          <p>הקורס כבר מכתיב לך את הסדר. תפקידך הוא להוציא לפועל — לא לדלג.</p>
+        </div>
+      </div>
+
+      <!-- ===== EXERCISES ===== -->
+      <div class="lesson-section">
+        <div class="section-marker">◆</div>
+        <h2 class="section-title">תרגילים</h2>
+
+        <div class="exercise-block">
+          <div class="exercise-num">תרגיל 1 — CIA Triad בחיים האמיתיים</div>
+          <p>חשוב על אפליקציה שאתה משתמש בה יום יום (WhatsApp, אינסטגרם, בנק).</p>
+          <p>זהה: איזה עיקרון מה־CIA Triad הכי קריטי עבורה ולמה?</p>
+          <div class="exercise-example">
+            <strong>דוגמה:</strong> לאפליקציית הבנק — Confidentiality הכי קריטי, כי אם מישהו יראה את הסיסמה שלי הוא יגנוב כסף.
+          </div>
+        </div>
+
+        <div class="exercise-block">
+          <div class="exercise-num">תרגיל 2 — הגדר את הכלל שלך</div>
+          <p>כתוב משפט אחד לעצמך:</p>
+          <p>מה הכלל שתעקוב אחריו כדי לא לדלג ולא ללמוד בצורה אקראית?</p>
+          <div class="exercise-example">
+            <strong>דוגמה:</strong> "אני מסיים כל שיעור ועושה את התרגילים שלו לפני שאני ממשיך לשיעור הבא."
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== NEXT LESSON ===== -->
+      <div class="lesson-next">
+        <p class="next-label">השיעור הבא</p>
+        <p class="next-title">סריקת רשתות — Nmap וזיהוי מטרות</p>
+        <span class="badge-soon">בקרוב</span>
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    // Logout
+    document.getElementById('logout-btn').addEventListener('click', function() {
+      fetch('/api/logout', { method: 'POST' }).then(function() {
+        window.location.href = '/login.html';
+      });
+    });
+  </script>
+
+</body>
+</html>
